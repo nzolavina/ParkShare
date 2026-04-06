@@ -9,6 +9,10 @@ const listings = [
     reviews: 128,
     image: "images/Davao-Real-Estate3.jpg",
     features: ["EV charger", "24/7 access", "Camera"],
+    availability: {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      time: "7:00 AM - 10:00 PM",
+    },
   },
   {
     id: 2,
@@ -20,6 +24,10 @@ const listings = [
     reviews: 82,
     image: "images/images.jpg",
     features: ["Easy exit", "Large SUV", "Instant book"],
+    availability: {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      time: "6:00 AM - 11:00 PM",
+    },
   },
   {
     id: 3,
@@ -31,6 +39,10 @@ const listings = [
     reviews: 244,
     image: "images/images (1).jpg",
     features: ["Attendant", "Wide bays", "Events"],
+    availability: {
+      days: ["Saturday", "Sunday"],
+      time: "8:00 AM - 8:00 PM",
+    },
   },
   {
     id: 4,
@@ -42,6 +54,10 @@ const listings = [
     reviews: 311,
     image: "images/images (2).jpg",
     features: ["Shuttle", "Indoor", "Overnight"],
+    availability: {
+      days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      time: "Open 24 Hours",
+    },
   },
   {
     id: 5,
@@ -53,6 +69,10 @@ const listings = [
     reviews: 63,
     image: "images/images (3).jpg",
     features: ["Budget", "Quiet street", "Compact"],
+    availability: {
+      days: ["Monday", "Wednesday", "Friday"],
+      time: "6:30 AM - 9:30 PM",
+    },
   },
   {
     id: 6,
@@ -64,6 +84,10 @@ const listings = [
     reviews: 95,
     image: "images/images (4).jpg",
     features: ["Gated", "Covered walkway", "Guard"],
+    availability: {
+      days: ["Tuesday", "Thursday", "Saturday", "Sunday"],
+      time: "7:00 AM - 12:00 AM",
+    },
   },
 ];
 
@@ -146,7 +170,7 @@ listingGrid.addEventListener("click", (event) => {
     return;
   }
 
-  alert(`Reserved: ${listing.title} in ${listing.location} for PHP ${listing.pricePerHour}/hr.`);
+  window.location.href = `reserve.html?id=${listing.id}`;
 });
 
 renderListings(listings);

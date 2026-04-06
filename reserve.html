@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve Spot | ParkShare Davao</title>
+    <meta name="description" content="Reserve your selected parking spot and view available days and times." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1" aria-hidden="true"></div>
+    <div class="bg-orb orb-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="ParkShare Home">
+        <span class="brand-mark">P</span>
+        <span class="brand-text">ParkShare</span>
+      </a>
+      <a class="btn btn-outline" href="index.html#listings">Back to listings</a>
+    </header>
+
+    <main class="reserve-page">
+      <section class="reserve-shell" aria-live="polite">
+        <p class="eyebrow">RESERVE SPOT</p>
+        <h1>Review spot availability</h1>
+        <div id="reserveContent" class="reserve-card"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>ParkShare | Parking, shared like home.</p>
+      <p>Built for GitHub Pages.</p>
+    </footer>
+
+    <script src="reserve.js"></script>
+  </body>
+</html>
