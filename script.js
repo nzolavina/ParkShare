@@ -135,6 +135,31 @@ function renderListings(data) {
   listingGrid.innerHTML = data.map(listingCardMarkup).join("");
 }
 
+function getCurrentBasePath() {
+  const { pathname } = window.location;
+
+  if (pathname.endsWith(".html")) {
+    return pathname.slice(0, pathname.lastIndexOf("/") + 1);
+  }
+
+  if (pathname.endsWith("/")) {
+    return pathname;
+  }
+
+  return `${pathname}/`;
+}
+
+function getPageUrl(pageName, queryParams = {}) {
+  const basePath = getCurrentBasePath();
+  const url = new URL(`${basePath}${pageName}`, window.location.origin);
+
+  Object.entries(queryParams).forEach(([key, value]) => {
+    url.searchParams.set(key, String(value));
+  });
+
+  return url.toString();
+}
+
 function applyFilters() {
   const formData = new FormData(searchForm);
   const location = formData.get("location").toLowerCase().trim();
@@ -170,7 +195,7 @@ listingGrid.addEventListener("click", (event) => {
     return;
   }
 
-  window.location.href = `reserve.html?id=${listing.id}`;
+  window.location.href = getPageUrl("reserve.html", { id: listing.id });
 });
 
 renderListings(listings);
